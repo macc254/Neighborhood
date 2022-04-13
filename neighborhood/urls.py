@@ -13,6 +13,6 @@ urlpatterns=[
     re_path('^$',views.home,name = 'home'),
     re_path('accounts/', include('django_registration.backends.one_step.urls')),
     re_path('accounts/register/',
-        RegistrationView.as_view(success_url='/profile/'),
+        RegistrationView.as_view(success_url='/home/'),
         name='django_registration_register'),
     ]

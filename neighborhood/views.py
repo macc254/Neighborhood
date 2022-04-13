@@ -1,5 +1,10 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http  import HttpResponse
+from . forms import Registration
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
+from django.contrib import messages
+from django.conf import settings
 # Create your views here.
 def home(request):
     return render(request, 'home.html')

@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"  
+REGISTER_REDIRECT_URL = "/accounts/login/"
 
 # Application definition
 
@@ -40,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'neighborhood',
     'bootstrap4',
+    'crispy_forms',
+    'tinymce',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

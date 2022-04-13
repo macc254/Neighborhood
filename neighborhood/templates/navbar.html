@@ -4,36 +4,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse" style="background-color:black; color:aliceblue;">
+    <nav class="navbar navbar-inverse" style="background-color:#2c514c; font-weight:bold;">
         <div class="container-fluid">
-            <div class=" navbar-header text-center col-sm-4 col-md-4 ">
-                <a class=" navbar-brand " href=" " style="background-color:black; color:aliceblue; ">HoodYangu</a>
-            </div>
             {% if user.is_authenticated %}
-            <div class=" col-sm-4 col-md-4 ">
-                <a href="" class="dropdown-toggle btn btn-default  col-sm-4 col-md-4" data-toggle="dropdown" style="color:aliceblue;" role=" button " ria-expanded="false ">HoodYangu<span class="caret "></span></a>
+            <div class="col-sm-4 col-md-4">
+                <a href="" class="dropdown-toggle btn btn-default  col-sm-4 col-md-4" data-toggle="dropdown" style="font-weight:bold;color:white;" role=" button " ria-expanded="false ">Menu<span class="caret "></span></a>
                 <div class="dropdown-menu col-sm-4 col-md-4 " aria-labelledby="dropdownMenuLink ">
                     <a class="dropdown-item " href="{%url 'home' %} ">Home</a>
-                    <a class="dropdown-item " href="{%url '' %} ">Post</a>
-                    <a class="dropdown-item " href="{%url '' %} ">Profile</a>
-                    <a class="dropdown-item " href="/accounts/password_change">Change Password</a>
-                    <a class="dropdown-item " href="/accounts/register">Register</a>
-                    <a class="dropdown-item " href="/accounts/logout">Logout</a>
-                    <a class="dropdown-item " href="/admin " style="color:purple; ">Admin Panel</a> {% else %}
-                    <a class=" btn btn-default " style="color:aliceblue;" role=" button " href="/accounts/login ">Login</a> {% endif %}
-                </div>
+                    <a class="dropdown-item " href="">Post</a>
+                    <a class=" dropdown-item " href="">Profile</a>
+                    <a class="dropdown-item " href="/accounts/password_change ">Change Password</a>
+                    <a class="dropdown-item " href="/accounts/register ">Register</a>
+                    <a class="dropdown-item " href="/accounts/logout ">Logout</a>
+                    <a class="dropdown-item " href="/admin " style="color:#41337a; ">Admin Panel</a>
+                </div>{% else %}
+
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <a class=" btn btn-default " style="color:aliceblue; font-weight:bold;" role=" button " href="/accounts/login ">Login</a> {% endif %}
+            </div>
+            <div class="navbar-header col-sm-4 col-md-4">
+                <a class="navbar-brand" href=" " style="color:aliceblue; ">HoodYangu</a>
             </div>
             <!-- Adding a search form  -->
-            <div class="col-sm-4 col-md-4 navbar-right ">
+            <div class="col-sm-4 col-md-4 navbar-right">
                 <form class="navbar-form " role="search " action=" ">
                     <div class="input-group ">
-                        <input type="text " class="form-control " placeholder="Search ... " name="post">
-                        <div class="input-group-btn ">
-                            <button class="btn " type="submit "><i class="glyphicon glyphicon-search "></i></button>
-                        </div>
+                        <input type="text " class="form-control " placeholder="Search ... " name="post ">
+                        <button class="btn btn-primary" style="background-color:#2c514c;" type="submit"><i class="glyphicon glyphicon-search" ></i></button>
+
+
                     </div>
                 </form>
             </div>
