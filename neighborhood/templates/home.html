@@ -1,6 +1,27 @@
 {%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
 <div class="container-fluid">
-    <h1>Hello</h1>
+    <h1>Hello</h1>{% for i in posts %}
+
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card" style="width: 45rem;">
+                <a href="post/{{i.id }}/" class="open-project"><img class="card-img-top" src="{{i.photo.url}}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{i.title}}</h5>
+                    <p class="card-text">{{i.description}}</p>
+                    </p>
+                    <a href="{{i.url}}" class="btn btn-primary" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
+
+    {% endfor %}
 </div>
 
 
