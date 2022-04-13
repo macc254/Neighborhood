@@ -20,6 +20,8 @@ urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path(r'',include('neighborhood.urls')),
     re_path(r'^accounts/', include('registration.backends.simple.urls')),
+    re_path('tinymce/',include('tinymce.urls')), # new
+
 
     
 ]

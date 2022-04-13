@@ -16,7 +16,8 @@ from django.core.exceptions import ObjectDoesNotExist
 import os
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    projects = Post.display_posts()
+    return render(request, 'home.html',{"posts": projects})
 def register(request):
   if request.method == 'POST':
     form = Registration(request.POST)

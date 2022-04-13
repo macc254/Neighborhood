@@ -18,6 +18,7 @@ class Profile(models.Model):
     name = models.CharField(blank=True, max_length=120)
     contact = models.EmailField(max_length=100, blank=True)
     
+    
         
     @receiver(post_save , sender = User)
     def create_profile(instance,sender,created,**kwargs):
