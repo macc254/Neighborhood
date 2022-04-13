@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" style="background-color:black; color:aliceblue;">
+        <div class="container-fluid">
+            {% if user.is_authenticated %}
+            <div class=" col-sm-4 col-md-4 ">
+                <a href="" class="dropdown-toggle btn btn-default  col-sm-4 col-md-4" data-toggle="dropdown" style="color:aliceblue;" role=" button " ria-expanded="false ">Awwwards Project<span class="caret "></span></a>
+                <div class="dropdown-menu col-sm-4 col-md-4 " aria-labelledby="dropdownMenuLink ">
+                    <a class="dropdown-item " href="{%url 'home' %} ">Home</a>
+                    <a class="dropdown-item " href="/accounts/password_change">Change Password</a>
+                    <a class="dropdown-item " href="/accounts/register">Register</a>
+                    <a class="dropdown-item " href="/accounts/logout">Logout</a>
+                    <a class=" btn btn-default " style="color:aliceblue;" role=" button " href="/accounts/login ">Login</a> {% endif %}
+                </div>
+            </div>
+            <!-- Adding a search form  -->
+            <div class="col-sm-4 col-md-4 navbar-right ">
+                <form class="navbar-form " role="search " action="{% url 'search_results' %} ">
+                    <div class="input-group ">
+                        <input type="text " class="form-control " placeholder="Search ... " name="post">
+                        <div class="input-group-btn ">
+                            <button class="btn " type="submit "><i class="glyphicon glyphicon-search "></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- search form end -->
+            <div class=" navbar-header text-center col-sm-4 col-md-4 ">
+                <a class=" navbar-brand " href="{% url 'new-post' %} " style="background-color:black; color:aliceblue; ">SUBMIT YOUR SITE!</a>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
