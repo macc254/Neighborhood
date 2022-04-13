@@ -15,7 +15,7 @@ class Registration(UserCreationForm):
 
     # user post class
 
-class PostForm(forms.ModelForm):
+class postProjectForm(forms.ModelForm):
   class Meta:
     model = Post
     fields = ['title','url','description','photo']
