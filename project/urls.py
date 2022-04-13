@@ -19,9 +19,8 @@ from django_registration.backends.one_step.views import RegistrationView
 
 urlpatterns = [
     re_path('admin/', admin.site.urls),
-    re_path("accounts/", include("django.contrib.auth.urls")),  # new
     re_path(r'',include('neighborhood.urls')),
+    re_path(r'^accounts/', include('registration.backends.simple.urls')),
+
     
-        re_path('accounts/register/', RegistrationView.as_view(success_url='/'),name='django_registration_register'),
-    re_path('accounts/', include('django_registration.backends.one_step.urls')),
 ]
