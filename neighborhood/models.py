@@ -39,6 +39,8 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, default="Bio", blank=True)
     name = models.CharField(blank=True, max_length=120)
     contact = models.EmailField(max_length=100, blank=True)
+    location = models.CharField(max_length=50, blank=True, null=True)
+    neighbourhood = models.ForeignKey(NeighbourHood, on_delete=models.SET_NULL, null=True, related_name='members', blank=True)
         
     @receiver(post_save , sender = User)
     def create_profile(instance,sender,created,**kwargs):

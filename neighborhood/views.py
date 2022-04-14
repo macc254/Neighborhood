@@ -6,7 +6,7 @@ from .models import Profile,Post
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 import datetime as dt
 from django.urls import reverse
-from . forms import Registration,UpdateUser,UpdateProfile,PostForm
+from . forms import Registration,UpdateUser,UpdateProfile,PostForm,NeighbourHoodForm
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.http import JsonResponse
@@ -76,3 +76,14 @@ def new_post(request):
         form = PostForm()
     return render(request, 'new_post.html', {"form": form})
   
+def create_hood(request):
+    if request.method == 'POST':
+        form = NeighbourHoodForm(request.POST, request.FILES)
+        if form.is_valid():
+            hood = form.save(commit=False)
+            hood.admin = request.user.profile
+            hood.save()
+            return redirect('hood')
+    else:
+        form = NeighbourHoodForm()
+    return render(request, 'newhood.html', {'form': form})
