@@ -6,7 +6,7 @@ from .models import Profile,Post
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 import datetime as dt
 from django.urls import reverse
-from . forms import Registration,UpdateUser,UpdateProfile,postProjectForm
+from . forms import Registration,UpdateUser,UpdateProfile,PostForm
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.http import JsonResponse
@@ -65,7 +65,7 @@ def update_profile(request):
 def new_post(request):
     current_user = request.user
     if request.method == 'POST':
-        form = postProjectForm(request.POST, request.FILES)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save(commit=False)
             article.user = current_user
@@ -73,6 +73,6 @@ def new_post(request):
         return redirect('home')
 
     else:
-        form = postProjectForm()
+        form = PostForm()
     return render(request, 'new_post.html', {"form": form})
   

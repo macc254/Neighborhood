@@ -8,8 +8,8 @@
                 <a href="post/{{i.id }}/" class="open-project"><img class="card-img-top" src="{{i.photo.url}}" alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{i.title}}</h5>
-                    <p class="card-text">{{i.description}}</p>
-                    </p>
+                    {% autoescape on %} {{i.description| safe}} {% endautoescape %}
+
                     <a href="{{i.url}}" class="btn btn-primary" target="_blank">View Location</a>
                 </div>
             </div>
