@@ -24,6 +24,10 @@ urlpatterns=[
     re_path('accounts/profile/',views.profile,name='profile'),
     re_path(r'^feeds_profile/(?P<pk>\d+)$',app_views.users_profile,name='users_profile'), 
     re_path('new-hood/', views.create_hood, name='new-hood'),
+    re_path('join_hood/<id>', views.join_hood, name='join-hood'),
+    re_path('leave_hood/<id>', views.leave_hood, name='leave-hood'),
+    re_path('all-hoods/', views.hoods, name='hood'),
+
 
 
     ]
