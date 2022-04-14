@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile,Post,NeighbourHood
+from .models import Profile,Post,NeighbourHood,Business
 from django.contrib.auth.models import User
 
 
@@ -25,7 +25,10 @@ class NeighbourHoodForm(forms.ModelForm):
         model = NeighbourHood
         exclude = ('admin',)
 
-
+class BusinessForm(forms.ModelForm):
+    class Meta:
+        model = Business
+        exclude = ('user', 'neighbourhood')
 class UpdateProfile(forms.ModelForm):
   class Meta:
     model = Profile

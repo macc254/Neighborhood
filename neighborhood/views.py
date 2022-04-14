@@ -2,11 +2,11 @@ from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from .models import Profile,Post,NeighbourHood
+from .models import Profile,Post,NeighbourHood,Business
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 import datetime as dt
 from django.urls import reverse
-from . forms import Registration,UpdateUser,UpdateProfile,PostForm,NeighbourHoodForm
+from . forms import Registration,UpdateUser,UpdateProfile,PostForm,NeighbourHoodForm,BusinessForm
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.http import JsonResponse
