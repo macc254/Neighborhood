@@ -27,6 +27,8 @@ urlpatterns=[
     re_path('join_hood/<id>', views.join_hood, name='join-hood'),
     re_path('leave_hood/<id>', views.leave_hood, name='leave-hood'),
     re_path('all-hoods/', views.hoods, name='hood'),
+    re_path('single_hood/<hood_id>', views.single_hood, name='single-hood'),
+
 
 
 
