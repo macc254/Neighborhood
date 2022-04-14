@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from .models import Profile,Post
+from .models import Profile,Post,NeighbourHood
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 import datetime as dt
 from django.urls import reverse
@@ -87,3 +87,10 @@ def create_hood(request):
     else:
         form = NeighbourHoodForm()
     return render(request, 'newhood.html', {'form': form})
+def hoods(request):
+    all_hoods = NeighbourHood.objects.all()
+    all_hoods = all_hoods[::-1]
+    params = {
+        'all_hoods': all_hoods,
+    }
+    return render(request, 'home.html', params)
