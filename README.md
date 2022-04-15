@@ -99,5 +99,5 @@ Open the application on your browser `127.0.0.1:8000`.
 If you have any question or contributions, please email me at [mercycherotich757@gmail.com](mailto:mercycherotich757@gmail.com)
   
 ## License 
-[License](https://github.com/macc254/Neighborhood/blob/master/LICENSE)  
+[License](https://github.com/macc254/Neighborhood/blob/master/License)  
 * Copyright (c) 2022 **Mercy Bore**
