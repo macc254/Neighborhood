@@ -1,0 +1,21 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+html,
+body {
+    height: 100%
+}
+
+#hood {
+    background-image: url("../images/Dubai.png");
+}
+
+h1 {
+    padding-top: 150px;
+    padding-bottom: 200px;
+    color: #fff;
+    width: 100%;
+    background: rgba(36, 48, 100, 0.7);
+}
+
+em {
+    font-size: 20px;
+}

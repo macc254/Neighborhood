@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .models import Profile,Post,NeighbourHood,Business
-from django.http  import HttpResponse,Http404,HttpResponseRedirect
 import datetime as dt
 from django.urls import reverse
 from . forms import Registration,UpdateUser,UpdateProfile,PostForm,NeighbourHoodForm,BusinessForm
@@ -15,6 +14,7 @@ from django.core.files.storage import FileSystemStorage
 from django.core.exceptions import ObjectDoesNotExist
 import os
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def home(request):
     projects = Post.display_posts()
     return render(request, 'home.html',{"posts": projects})
@@ -31,7 +31,8 @@ def register(request):
   else:
     form = Registration()
   return render(request,'registration/registration_form.html',{"form":form})
-@login_required
+
+@login_required(login_url='/accounts/login/')
 def profile(request):
   current_user = request.user
   posts = Post.objects.all()
@@ -90,10 +91,7 @@ def create_hood(request):
 def hoods(request):
     all_hoods = NeighbourHood.objects.all()
     all_hoods = all_hoods[::-1]
-    params = {
-        'all_hoods': all_hoods,
-    }
-    return render(request, 'home.html', params)
+    return render(request, 'hoods.html', { 'all_hoods': all_hoods})
 
 def join_hood(request, id):
     neighbourhood = get_object_or_404(NeighbourHood, id=id)

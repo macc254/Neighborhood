@@ -1,46 +1,8 @@
 {%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
-<div class="container-fluid">
-    {% for i in posts %}
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="card" style="width: 45rem;">
-                <a href="post/{{i.id }}/" class="open-project"><img class="card-img-top" src="{{i.photo.url}}" alt="Card image cap"></a>
-                <div class="card-body">
-                    <h5 class="card-title">{{i.title}}</h5>
-                    {% autoescape on %} {{i.description| safe}} {% endautoescape %}
 
-                    <a href="{{i.url}}" class="btn btn-primary" target="_blank">View Location</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-
-
-
-    {% endfor %}
+<div class="container-fluid " style="background-image:url( '../../static/images/Dubai.png');background-repeat:no-repeat;background-size: cover; background-repeat: no-repeat;background-attachment: fixed; height: 500px;width: 100%;" id="hood ">
+    <h1 class="text-center" style="color:white;padding-top:170px;">Welcome To HoodYangu<br> <em>Be in the loop about everything happening in your neighborhood.<br> From contact information of different handyman to meeting announcements or even alerts.</em></h1>
 </div>
-<div class="container">
-    <a href="{% url 'new-hood' %}" class="btn btn-sm btn-info mb-2"> New Hood</a>
-    <div class="row">
-        {% for hood in all_hoods %}
-        <div class="col-md-4">
-            <div class="card mb-4" style="min-height:340px">
-                <img src="{{ hood.hood_logo.url }}" class="card-img-top" alt="{{ hood.name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ hood.name }} ({{hood.location}}) <span class="ml-4">{{hood.members.count}} member{{hood.members.count|pluralize}}</span></h5>
-                    <p class="card-text">{{hood.description}}</p>
-                    {% if request.user.profile.neighbourhood == hood %}
-                    <a href="{% url 'leave-hood' hood.id %}" class="btn btn-outline-danger btn-sm">Leave Hood</a> {% elif not request.user.profile.neighbourhood %}
-                    <a href="{% url 'join-hood' hood.id %}" class="btn btn-primary btn-sm">Join Hood</a> {% endif %}
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-
 
 {% endblock %}{% block scripts %} {{block.super}}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>

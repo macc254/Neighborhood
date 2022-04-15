@@ -30,10 +30,9 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"  
-REGISTER_REDIRECT_URL = "/accounts/login/"
+LOGIN_URL ="/accounts/login"
+LOGOUT_URL ="/logout"
+LOGOUT_REDIRECT_URL ="/accounts/login"
 
 # Application definition
 
@@ -74,6 +73,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+
             ],
         },
     },
@@ -134,6 +135,10 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

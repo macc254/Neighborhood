@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import re_path,include
+from django.contrib.auth import views 
+
 
 urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path(r'',include('neighborhood.urls')),
     re_path(r'^accounts/', include('registration.backends.simple.urls')),
+    re_path('accounts/', include('django_registration.backends.one_step.urls')),
+    re_path('accounts/', include('django.contrib.auth.urls')),
     re_path('tinymce/',include('tinymce.urls')), # new
+
 
 
     

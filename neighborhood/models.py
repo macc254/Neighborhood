@@ -75,7 +75,7 @@ class Post(models.Model):
     url = models.URLField(max_length=255)
     description = HTMLField()
     photo = models.ImageField(upload_to='images/', default='default.png')
-    user = models.ForeignKey(User,on_delete = models.CASCADE,default=1)
+    user = models.ForeignKey(Profile,on_delete = models.CASCADE,default=1)
 
     def __str__(self):
         return self.title
