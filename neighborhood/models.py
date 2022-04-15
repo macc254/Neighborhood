@@ -25,8 +25,8 @@ class NeighbourHood(models.Model):
         self.delete()
 
     @classmethod
-    def find_neighborhood(cls, neighborhood_id):
-        return cls.objects.filter(id=neighborhood_id)
+    def find_neighborhood(cls, neighbourhood_id):
+        return cls.objects.filter(id=neighbourhood_id)
     
 class Business(models.Model):
     name = models.CharField(max_length=120)

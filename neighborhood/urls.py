@@ -21,9 +21,13 @@ urlpatterns=[
     re_path(r'^feeds_profile/(?P<pk>\d+)$',views.users_profile,name='users_profile'), 
     re_path('new-hood/', views.create_hood, name='new-hood'),
     re_path('all-hoods/', views.hoods, name='all-hoods'),
-    re_path('join_hood/<id>', views.join_hood, name='join-hood'),
-    re_path('leave_hood/<id>', views.leave_hood, name='leave-hood'),
-    re_path('single_hood/<id>', views.single_hood, name='single_hood'),
+    re_path(r'^join_hood/(\d+)',views.join_hood, name='join_hood'), 
+    re_path(r'^leave_hood/(\d+)',views.leave_hood, name='leave_hood'), 
+    re_path(r'^single_hood/(\d+)',views.single_hood, name='single_hood'), 
+
+    # re_path('join_hood/<int:id>', views.join_hood, name='join_hood'),
+    # re_path('leave_hood/<int:id>', views.leave_hood, name='leave_hood'),
+    # re_path('single_hood/<id>', views.single_hood, name='single_hood'),
     ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
