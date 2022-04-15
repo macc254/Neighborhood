@@ -25,7 +25,9 @@ urlpatterns=[
     re_path(r'^leave_hood/(\d+)',views.leave_hood, name='leave_hood'), 
     re_path(r'^single_hood/(\d+)',views.single_hood, name='single_hood'), 
     re_path(r'^(\d+)/members/', views.hood_members, name='members'),
-    re_path(r'^(\d+)/new-post/', views.create_post, name='post')
+    re_path(r'^(\d+)/new-post/', views.create_post, name='post'),
+    re_path('search/', views.search_business, name='search'),
+
 
     # re_path('<hood_id>/new-post', views.create_post, name='post'),
     # re_path('join_hood/<int:id>', views.join_hood, name='join_hood'),
