@@ -63,7 +63,7 @@ def update_profile(request):
   return render(request,'profile/update.html',params)
 
 @login_required(login_url='/accounts/login/')
-def new_post(request,hood_id):
+def new_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -73,8 +73,8 @@ def new_post(request,hood_id):
             return redirect('home')
 
     else:
-      post_form = PostForm()
-    return render(request,'post.html',{"post_form":post_form})
+      form = PostForm()
+    return render(request,'new_post.html',{"form":form})
 def create_hood(request):
     if request.method == 'POST':
         form = NeighbourHoodForm(request.POST, request.FILES)
@@ -82,14 +82,14 @@ def create_hood(request):
             hood = form.save(commit=False)
             hood.admin = request.user.profile
             hood.save()
-            return redirect('hood')
+            return redirect('home')
     else:
         form = NeighbourHoodForm()
     return render(request, 'newhood.html', {'form': form})
 def hoods(request):
     all_hoods = NeighbourHood.objects.all()
     all_hoods = all_hoods[::-1]
-    return render(request, 'hoods.html', { 'all_hoods': all_hoods})
+    return render(request, 'hoods.html', { 'hoods': all_hoods})
 
 def join_hood(request, id):
     neighbourhood = get_object_or_404(NeighbourHood, id=id)

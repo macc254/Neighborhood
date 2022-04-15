@@ -10,13 +10,17 @@
 <body>
     <nav class="navbar navbar-inverse" style="background-color:#5c7aff; font-weight:bold;">
         <div class="container-fluid">
+            <div class=" col-sm-4 col-md-4"></div>
+            <div class="navbar-header col-sm-4 col-md-4">
+                <a class="navbar-brand" href="{% url 'home' %} " style="color:aliceblue; ">HoodYangu</a>
+            </div>
             {% if user.is_authenticated %}
             <div class="col-sm-4 col-md-4">
                 <a href="" class="dropdown-toggle btn btn-default  col-sm-4 col-md-4" data-toggle="dropdown" style="font-weight:bold;color:white;" role=" button " ria-expanded="false ">Menu<span class="caret "></span></a>
                 <div class="dropdown-menu col-sm-4 col-md-4 " aria-labelledby="dropdownMenuLink ">
                     <a class="dropdown-item " href="{%url 'home' %}">Home</a>
                     <a class="dropdown-item " href="{%url 'new-post' %}">Post</a>
-                    <a class="dropdown-item " href="{%url 'all-hoods' %}">Neighborhoods</a>
+                    <a class="dropdown-item " href="{%url 'hoods' %}">Neighborhoods</a>
                     <a class="dropdown-item " href="{%url 'new-hood' %}">New Hood</a>
                     <a class="dropdown-item " href="/accounts/password_change">Change Password</a>
                     <a class="dropdown-item " href="/accounts/register">Register</a>
@@ -28,20 +32,9 @@
             <div class="col-sm-4 col-md-4">
                 <a class=" btn btn-default " style="color:aliceblue; font-weight:bold;" role=" button " href="/accounts/login ">Login</a> {% endif %}
             </div>
-            <div class="navbar-header col-sm-4 col-md-4">
-                <a class="navbar-brand" href="{% url 'home' %} " style="color:aliceblue; ">HoodYangu</a>
-            </div>
+
             <!-- Adding a search form  -->
-            <div class="col-sm-4 col-md-4 navbar-right">
-                <form class="navbar-form " role="search " action=" ">
-                    <div class="input-group ">
-                        <input type="text " class="form-control " placeholder="Search ... " name="post ">
-                        <button class="btn btn-primary" style="background-color:#5c7aff;" type="submit"><i class="glyphicon glyphicon-search" ></i></button>
 
-
-                    </div>
-                </form>
-            </div>
             <!-- search form end -->
 
         </div>
