@@ -37,15 +37,9 @@ An existing user enters their details here to login. There is an option for sign
 ## Sign up page
 This is a page where a new user will register.
  
-## Technology used  
-  
-* [Python3.8](https://www.python.org/)  
-* [Django 4.0.4](https://docs.djangoproject.com/en/2.2/)  
-* [Heroku](https://heroku.com)  
-  
+## Join a neighborhood
 
-  
-  
+## Leave a neighborhood
 ## Setup and Installation  
 To get the project .......  
   

@@ -63,20 +63,20 @@ def update_profile(request):
   return render(request,'profile/update.html',params)
 
 @login_required(login_url='/accounts/login/')
-def new_post(request):
-    current_user = request.user
+def new_post(request,hood_id):
+    hood = NeighbourHood.objects.get(id=hood_id)
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save(commit=False)
-            article.user = current_user
+            article.hood = hood
+            article.user = request.user.profile
             article.save()
-        return redirect('home')
-
+        return redirect('single-hood', hood.id)
     else:
         form = PostForm()
-    return render(request, 'new_post.html', {"form": form})
-  
+    return render(request, 'new_post.html', {'form': form})
+
 def create_hood(request):
     if request.method == 'POST':
         form = NeighbourHoodForm(request.POST, request.FILES)

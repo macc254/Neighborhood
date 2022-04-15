@@ -8,7 +8,7 @@ from django_registration.backends.one_step.views import RegistrationView
 from . import views
 urlpatterns=[
     re_path('^$',views.home,name = 'home'),
-  
+
     re_path(r'^new/post$', views.new_post, name='new-post'),
     re_path('accounts/', include('django_registration.backends.one_step.urls')),
     re_path('accounts/register/',
@@ -24,7 +24,7 @@ urlpatterns=[
     re_path(r'^join_hood/(\d+)',views.join_hood, name='join_hood'), 
     re_path(r'^leave_hood/(\d+)',views.leave_hood, name='leave_hood'), 
     re_path(r'^single_hood/(\d+)',views.single_hood, name='single_hood'), 
-    re_path('<hood_id>/members', views.hood_members, name='members'),
+    re_path(r'^(\d+)/members/', views.hood_members, name='members'),
 
     # re_path('join_hood/<int:id>', views.join_hood, name='join_hood'),
     # re_path('leave_hood/<int:id>', views.leave_hood, name='leave_hood'),
