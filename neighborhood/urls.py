@@ -23,8 +23,7 @@ urlpatterns=[
     re_path('all-hoods/', views.hoods, name='all-hoods'),
     re_path('join_hood/<id>', views.join_hood, name='join-hood'),
     re_path('leave_hood/<id>', views.leave_hood, name='leave-hood'),
-    re_path('', views.hoods, name='hood'),
-    re_path('single_hood/<hood_id>', views.single_hood, name='single-hood'),
+    re_path('single_hood/<id>', views.single_hood, name='single_hood'),
     ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
