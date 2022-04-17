@@ -4,7 +4,7 @@
 
 >[Mercy Bore](https://github.com/macc254)  
 ##  Live Link  
-You can view the >[here](https://mercy-neighbourhood.herokuapp.com/)
+You can view the project [here](https://mercy-neighbourhood.herokuapp.com/)
   
   
 # Description  
