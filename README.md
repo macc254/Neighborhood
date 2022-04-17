@@ -1,16 +1,15 @@
-# HoodYangu Neighbourhood Web App
+# HoodYangu - A Neighbourhood Web App built with Django
 >[Repo link: ](https://github.com/macc254/Neighborhood.git)
 ## Author 
 
 >[Mercy Bore](https://github.com/macc254)  
+##  Live Link  
+You can view the >[here](https://mercy-neighbourhood.herokuapp.com/)
+  
   
 # Description  
 
 This is a web application that allows you to be in the loop about everything happening in your neighborhood. From contact information of different handyman to meeting announcements or even alerts.
-##  Live Link  
-You can view the site through:
-  
-
 ## User Story  
 A user can :
 
@@ -39,7 +38,11 @@ This is a page where a new user will register.
  
 ## Join a neighborhood
 
+## View details of your current neighborhood
+
 ## Leave a neighborhood
+
+## Add a business
 ## Setup and Installation  
 To get the project .......  
   
@@ -84,11 +87,7 @@ Open the application on your browser `127.0.0.1:8000`.
   
 * [Python3.8.10](https://www.python.org/)  
 * [Django 4.0.4](https://docs.djangoproject.com/en/2.2/)  
-* [Heroku](https://heroku.com)  
-  
-  
- 
-  
+* [Heroku](https://heroku.com)    
 ## Contact Information   
 If you have any question or contributions, please email me at [mercycherotich757@gmail.com](mailto:mercycherotich757@gmail.com)
   
