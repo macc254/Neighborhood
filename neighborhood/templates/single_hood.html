@@ -52,7 +52,7 @@
                                 </h5>
                                 <p class="card-text">{{bus.email}}</p>
                                 <p class="card-text">{{bus.description}}</p>
-                                <p class="card-text">Owner: <small class="text-muted">
+                                <p class="card-text">Owner: {{bus.user}} <small class="text-muted">
                                     {{ bus.user.user.username|title }}</small></p>
                             </div>
                         </div>
@@ -63,10 +63,12 @@
                 <div class="row">
                     {% for post in posts %}
                     <div class="col-md-4">
-                        <div class="card mb-4 hpost">
+                        <div class="card mb-4">
                             <div class="card-body">
                                 <h5 class="card-title">{{post.title}}</h5>
-                                <p class="card-text">" {{post.post}} "
+                                <p class="card-text"> {{post.url}}
+                                </p>
+                                <p class="card-text">{{post.description}}
                                 </p>
                                 <p class="card-text">By: <small class="text-white">
                                     {{ post.user.user.username|title }}</small> <small style="float:right">{{post.date|date}}</small>
