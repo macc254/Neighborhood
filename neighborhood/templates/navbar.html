@@ -10,27 +10,28 @@
 <body>
     <nav class="navbar navbar-inverse" style="background-color:#5c7aff; font-weight:bold;">
         <div class="container-fluid">
-            <div class=" col-sm-4 col-md-4"></div>
-            <div class="navbar-header col-sm-4 col-md-4">
-                <a class="navbar-brand" href="{% url 'home' %} " style="color:aliceblue; ">HoodYangu</a>
+            <div class=" col-sm-4 col-md-4">
+            </div>
+            <div class="navbar-header col-sm-4 col-md-4 ">
+                <a class="navbar-brand " href="{% url 'home' %} " style="color:aliceblue; ">HoodYangu</a>
             </div>
             {% if user.is_authenticated %}
-            <div class="col-sm-4 col-md-4">
-                <a href="" class="dropdown-toggle btn btn-default  col-sm-4 col-md-4" data-toggle="dropdown" style="font-weight:bold;color:white;" role=" button " ria-expanded="false ">Menu<span class="caret "></span></a>
+            <div class="col-sm-4 col-md-4 ">
+                <a href=" " class="dropdown-toggle btn btn-default col-sm-4 col-md-4 " data-toggle="dropdown " style="font-weight:bold;color:white; " role=" button " ria-expanded="false ">Menu<span class="caret "></span></a>
                 <div class="dropdown-menu col-sm-4 col-md-4 " aria-labelledby="dropdownMenuLink ">
-                    <a class="dropdown-item " href="{%url 'home' %}">Home</a>
-                    <a class="dropdown-item " href="{%url 'new-post' %}">Post</a>
-                    <a class="dropdown-item " href="{%url 'hoods' %}">Neighborhoods</a>
-                    <a class="dropdown-item " href="{%url 'new-hood' %}">New Hood</a>
-                    <a class="dropdown-item " href="/accounts/password_change">Change Password</a>
-                    <a class="dropdown-item " href="/accounts/register">Register</a>
-                    <a class="dropdown-item " href="accounts/logout">Logout</a>
-                    <a class="dropdown-item " href="/admin" style="color:#41337a; ">Admin Panel</a>
+                    <a class="dropdown-item " href="{%url 'home' %} ">Home</a>
+                    <a class="dropdown-item " href="{%url 'new-post' %} ">Post</a>
+                    <a class="dropdown-item " href="{%url 'hoods' %} ">Neighborhoods</a>
+                    <a class="dropdown-item " href="{%url 'new-hood' %} ">New Hood</a>
+                    <a class="dropdown-item " href="/accounts/password_change ">Change Password</a>
+                    <a class="dropdown-item " href="/accounts/register ">Register</a>
+                    <a class="dropdown-item " href="accounts/logout ">Logout</a>
+                    <a class="dropdown-item " href="/admin " style="color:#41337a; ">Admin Panel</a>
                 </div>{% else %}
 
             </div>
-            <div class="col-sm-4 col-md-4">
-                <a class=" btn btn-default " style="color:aliceblue; font-weight:bold;" role=" button " href="/accounts/login ">Login</a> {% endif %}
+            <div class="col-sm-4 col-md-4 ">
+                <a class=" btn btn-default " style="color:aliceblue; font-weight:bold; " role=" button " href="/accounts/login ">Login</a> {% endif %}
             </div>
 
             <!-- Adding a search form  -->
