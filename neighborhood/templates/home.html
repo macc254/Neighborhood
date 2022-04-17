@@ -2,7 +2,37 @@
 
 <div class="container-fluid " style="background-image:url( '../../static/images/Dubai.png');background-size: cover; background-position: center center;background-attachment: fixed;background-repeat: no-repeat;background-attachment: fixed;" id="hood ">
     <h1 class="text-center" style="color:white;padding-top:170px;">Welcome To HoodYangu<br> <em>Be in the loop about everything happening in your neighborhood.<br> From contact information of different handyman to meeting announcements or even alerts.</em></h1>
+    <a href="{% url 'hoods' %}" class="btn btn-primary">Join Hood</a> {% if user.is_authenticated %}
+    <ul class="list-unstyled components mr-2 ml-2">
+
+
+        <li class="mb-4">
+            <a href="{% url 'hoods' %}">
+                <i class="fas fa-home"></i>&nbsp; &nbsp; Hoods
+            </a>
+        </li>
+
+        {% if user.profile.neighbourhood %}
+        <li class="mb-4">
+            <a href="{% url 'single_hood' user.profile.neighbourhood.id %}">
+                <i class="fas fa-paper-plane"></i>&nbsp; &nbsp;{{user.profile.neighbourhood.name}}
+            </a>
+        </li>
+        {% else %}
+        <li class="mb-4">
+            <a href=""> &nbsp;
+                No Hood Yet
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+    <div class="logout ml-2 mr-2 ">
+        <a href="{% url 'logout' %}" class="btn btn-sm btn-outline-danger d-block mx-auto"> Logout</a>
+    </div>
+
+    {% endif%}
 </div>
+
 
 {% endblock %}{% block scripts %} {{block.super}}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>

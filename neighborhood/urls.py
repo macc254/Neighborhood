@@ -27,6 +27,8 @@ urlpatterns=[
     re_path(r'^(\d+)/members/', views.hood_members, name='members'),
     re_path(r'^(\d+)/new-post/', views.create_post, name='post'),
     re_path('search/', views.search_business, name='search'),
+    re_path('profile/<username>', views.profile, name='profile'),
+
 
 
     # re_path('<hood_id>/new-post', views.create_post, name='post'),

@@ -3,22 +3,21 @@
 <div class="container">
     <a href="{% url 'new-hood' %}" class="btn btn-sm btn-info mb-2"> New Hood</a>
     <div class="row">
-        {% for hood in hoods %}
+        {% for hood in all_hoods %}
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <div class="card mb-4" style="min-height:340px">
-
-                <img src="{{ hood.hood_logo.url }}" class="card-img-top" alt="{{ hood.name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ hood.name }} ({{hood.location}}) <span class="ml-4">{{hood.members.count}} member{{hood.members.count|pluralize}}</span></h5>
-                    <h5 class="card-title">Police No: ({{hood.police_number}}) <br> Health Contact: ({{hood.health_tell}})</h5>
-                    <p>{{hood.description}}
-                    </p> {% if request.user.profile.neighbourhood == hood %} <a href="{% url 'leave_hood ' hood.id %}" class="btn btn-outline-danger btn-sm">Leave Hood</a> {% elif request.user.profile.neighbourhood == neighbourhood %}
-                    <a href="{% url 'join_hood ' hood.id %}" class="btn btn-primary btn-sm">Join Hood</a> {% endif %} </div>
+            <div class="card" style="min-height:340px; ">
+                <a href=""> <img src="{{ hood.hood_logo.url }} " class="card-img-top " alt="{{ hood.name }} ">
+                </a>
+                <div class="card-body ">
+                    <h5 class="card-title ">Welcome to {{ hood.name }} Neighborhood,<br> located in ({{hood.location}})<br> <span class="ml-4 ">{{hood.members.count}} member{{hood.members.count|pluralize}}</span></h5>
+                    <h5 class="card-title ">Police No: ({{hood.police_number}}) <br> Health Contact: ({{hood.health_tell}})</h5>
+                    <p>{{hood.description}}</p>
+                    <a href="single_hood/{{hood.id}}/">view hood
+                    </a> {% if request.user.profile.neighbourhood == hood %}
+                    <a href="{% url 'leave_hood' hood.id %} " class="btn btn-outline-danger btn-sm ">Leave Hood</a> {% elif not request.user.profile.neighbourhood %}
+                    <a href="{% url 'join_hood' hood.id %} " class="btn btn-primary btn-sm ">Join Hood</a> {% endif %}
+                </div>
             </div>
         </div>
-        <div class="col-md-4"></div>
-        {% endfor %}
-
-    </div>
-    {% endblock %}
+        <div class="col-md-4 "></div> {% endfor %} {% endblock %}
