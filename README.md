@@ -24,25 +24,26 @@ A user can :
 
 ## Screenshots 
 ## Home page
- In the homepage, a user is able to login or sign up to be able to to view each neighburhood and its details.
-
- 
-## Create  Post
-An authenticated user is able to post  in this page 
-
+In the homepage, a user is able to login or sign up to be able to to view each neighburhood and its details.
+ ![home](https://user-images.githubusercontent.com/61621637/163714631-a0d81b04-c5a6-4b2e-809d-a6ca09a92c60.png)
 ## Login
 An existing user enters their details here to login. There is an option for signing up for new users.
+![login](https://user-images.githubusercontent.com/61621637/163714625-383e6c0e-fab7-4075-bc1c-a86194a9412c.png)
 
 ## Sign up page
 This is a page where a new user will register.
- 
+ ![register](https://user-images.githubusercontent.com/61621637/163714621-3d347431-54e6-4af7-b746-b2e6938e5671.png)
 ## Join a neighborhood
-
+![join-hood](https://user-images.githubusercontent.com/61621637/163714597-15d4e74a-631e-4913-a32e-91252fbe79c9.png)
 ## View details of your current neighborhood
-
+![cureent-neigh](https://user-images.githubusercontent.com/61621637/163714555-ac592968-b9ed-4e11-9505-3d1911278184.png)
 ## Leave a neighborhood
+![leave-hood](https://user-images.githubusercontent.com/61621637/163714611-e12ba7c9-5e0f-472f-8ce9-0d1070b35780.png)
 
-## Add a business
+
+## Add a business and post
+![biz](https://user-images.githubusercontent.com/61621637/163714574-18243d5a-4ca0-4f56-870c-eaa92fc51c8c.png)
+
 ## Setup and Installation  
 To get the project .......  
   
